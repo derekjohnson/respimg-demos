@@ -19,7 +19,7 @@ globally ignore:
 
 ```gitignore
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 ```
 
 * More on global ignores: http://help.github.com/ignore-files/

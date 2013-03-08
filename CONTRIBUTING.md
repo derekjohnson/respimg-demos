@@ -106,7 +106,7 @@ project:
    ```
 
 10. [Open a Pull Request](https://help.github.com/articles/using-pull-requests) with a
-    clear title and description.
+	clear title and description.
 
 
 ## Do not…

@@ -49,12 +49,12 @@ used to install Apache.
 1. Open up a terminal and type the following command. Enter your password when
    prompted.
 
-    `sudo a2enmod setenvif headers deflate filter expires rewrite include`
+	`sudo a2enmod setenvif headers deflate filter expires rewrite include`
 
 1. Restart apache by using the following command so the new configuration takes
    effect.
 
-    `sudo /etc/init.d/apache2 restart`
+	`sudo /etc/init.d/apache2 restart`
 
 That's it, you're done!
 

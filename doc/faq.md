@@ -54,11 +54,11 @@ page:
 
 ```css
 span.skype_pnh_container {
-    display: none !important;
+	display: none !important;
 }
 
 span.skype_pnh_print_container {
-    display: inline !important;
+	display: inline !important;
 }
 ```
 
