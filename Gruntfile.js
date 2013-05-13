@@ -2,21 +2,35 @@ module.exports = function(grunt) {
 
 	// load tasks
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('svgo-grunt');
 
 	// config
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// watch
 		watch: {
 			css: {
 				files: 'sass/*.scss',
-				tasks: ['sass:prod'],
+				tasks: ['sass'],
+				options: {
+					interrupt: true
+				}
+			},
+
+			js: {
+				files: 'js/src/*.js',
+				tasks: ['uglify'],
 				options: {
 					interrupt: true
 				}
 			}
 		},
 
+		// tasks
 		sass: {
 			prod: {
 				options: {
@@ -29,8 +43,31 @@ module.exports = function(grunt) {
 					'css/really-old-ie.css': 'sass/really-old-ie.scss'
 				}
 			}
+		},
+
+		uglify: {
+			prod: {
+				options: {
+					preserveComments: false,
+					report: 'gzip'
+				},
+
+				files: {
+					'js/script.min.js': ['js/src/main.js','js/src/script.js']
+				}
+			}
+		},
+
+		jshint: {
+			all: ['Gruntfile.js']
+		},
+
+		svgo: {
+			prod: {
+				files: ['img/*.svg']
+			}
 		}
 	});
 
-	grunt.registerTask('default', ['sass']);
-}
+	grunt.registerTask('default', ['sass','svgo','jshint','uglify']);
+};
