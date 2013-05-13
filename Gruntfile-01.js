@@ -7,18 +7,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		watch: {
-			css: {
-				files: 'sass/*.scss',
-				tasks: ['sass:prod'],
-				options: {
-					interrupt: true
-				}
-			}
-		},
-
 		sass: {
-			prod: {
+			dist: {
 				options: {
 					style: 'compressed'
 				},
@@ -32,5 +22,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['sass']);
+	grunt.registerTask('css_compile', ['sass']);
 }
