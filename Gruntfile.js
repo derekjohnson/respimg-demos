@@ -48,12 +48,11 @@ module.exports = function(grunt) {
 		uglify: {
 			prod: {
 				options: {
-					preserveComments: false,
-					report: 'gzip'
+					preserveComments: false
 				},
 
 				files: {
-					'js/script.min.js': ['js/src/main.js','js/src/script.js']
+					'js/script.min.js': ['js/src/main.js']
 				}
 			}
 		},
