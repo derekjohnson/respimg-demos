@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
-			all: ['Gruntfile.js']
+			prod: ['Gruntfile.js']
 		},
 
 		imagemin: {
