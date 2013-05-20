@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('svgo-grunt');
 
 	// config
@@ -61,12 +62,40 @@ module.exports = function(grunt) {
 			all: ['Gruntfile.js']
 		},
 
+		imagemin: {
+			prod: {
+				options: {
+					optimizationLevel: 3
+				},
+
+				files: [
+					{
+						expand: true,     // Enable dynamic expansion.
+						cwd: 'img/src/',      // Src matches are relative to this path.
+						src: ['**/*.png'], // Actual pattern(s) to match.
+						dest: 'img/',   // Destination path prefix.
+						ext: '.png',   // Dest filepaths will have this extension.
+					},
+
+					{
+						expand: true,     // Enable dynamic expansion.
+						cwd: 'img/src/',      // Src matches are relative to this path.
+						src: ['**/*.jpg'], // Actual pattern(s) to match.
+						dest: 'img/',   // Destination path prefix.
+						ext: '.jpg',   // Dest filepaths will have this extension.
+					}
+				]
+			}
+		},
+
 		svgo: {
 			prod: {
-				files: ['img/*.svg']
+				files: 'img/*.svg'
 			}
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgo','jshint','uglify']);
+	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imagemin']);
+
+	grunt.registerTask('img', ['imagemin','svgo']);
 };
