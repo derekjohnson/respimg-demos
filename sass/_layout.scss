@@ -1,0 +1,37 @@
+/*! Layout */
+
+/* ==========================================================================
+   Media object ~ my responsive Sass take on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+   ========================================================================== */
+.l-media {
+	margin-bottom: 1em;
+}
+
+.l-media,
+.l-media__body {
+	overflow: hidden;
+	
+	@include old-ie {
+		zoom: 1;
+	}
+
+	@include really-old-ie {
+		overflow: visible;
+	}
+}
+
+.l-media__img-wrap {
+	display: block;
+	margin-bottom: 1em;
+	
+	@include respond-min($b1) {
+		float: left;
+		width: 33%;
+		margin-right: 6%;
+	}
+}
+
+.l-media__img {
+	display: block;
+	margin: 0 auto;
+}

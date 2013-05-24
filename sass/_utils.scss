@@ -27,6 +27,16 @@ $old-ie: false !default;
 	}
 }
 
+$really-old-ie: false !default;
+
+@mixin really-old-ie {
+	// Only use this content if we're dealing with lte IE6
+	@if $really-old-ie {
+		@content;
+	}
+}
+
 /*
  * Variables
  */
+ $b1: 20em;

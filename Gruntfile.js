@@ -50,8 +50,12 @@ module.exports = function(grunt) {
 		csslint: {
 			prod: {
 				options: {
-					import: 2,
-					'empty-rules': 2
+					'import': 2,
+					'empty-rules': 2,
+					'star-property-hack': false,
+					'underscore-property-hack': false,
+					'compatible-vendor-prefixes': false,
+					'box-sizing': false
 				},
 
 				src: ['css/style.css']
