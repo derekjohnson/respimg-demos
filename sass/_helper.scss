@@ -10,8 +10,14 @@
 	background-color: transparent;
 	border: 0;
 	overflow: hidden;
-	/* IE 6/7 fallback */
-	*text-indent: -9999px;
+	
+	@include old-ie {
+		*text-indent: -9999px;
+	}
+	
+	@include really-old-ie {
+		*text-indent: -9999px;
+	}
 }
 
 .ir:before {
@@ -64,5 +70,11 @@
  */
 
 .cf {
-	*zoom: 1;
+	@include old-ie {
+		*zoom: 1;
+	}
+
+	@include really-old-ie {
+		*zoom: 1;
+	}
 }

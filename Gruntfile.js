@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		sass: {
 			prod: {
 				options: {
-					style: 'compressed'
+					style: 'expanded'
 				},
 
 				files: {
@@ -52,8 +52,6 @@ module.exports = function(grunt) {
 				options: {
 					'import': 2,
 					'empty-rules': 2,
-					'star-property-hack': false,
-					'underscore-property-hack': false,
 					'compatible-vendor-prefixes': false,
 					'box-sizing': false
 				},
