@@ -36,5 +36,13 @@
 			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>
+
+		<!--helium - dev only-->
+		<script src="helium.js"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', function(){
+				helium.init();
+			}, false);
+		</script>
 	</body>
 </html>
