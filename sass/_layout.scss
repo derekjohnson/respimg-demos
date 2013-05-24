@@ -35,3 +35,38 @@
 	display: block;
 	margin: 0 auto;
 }
+
+/* ==========================================================================
+   Stretch object ~ an element containing two elements that stick to the left and right sides
+   ========================================================================== */
+.l-stretch {
+	@include respond-min($b1) {
+		text-align: right;
+	}
+}
+
+.l-stretch__item {
+	display: block;
+	clear: left;
+	margin-bottom: 1em;
+	
+	@include respond-min($b1) {
+		display: inline-block;
+		clear: none;
+		
+		@include old-ie {
+			*display: inline;
+			*zoom: 1;
+		}
+	}
+}
+
+.l-stretch__left {
+	display: block;
+	clear: left;
+	margin-bottom: 1em;
+	
+	@include respond-min($b1) {
+		float: left;
+	}
+}
