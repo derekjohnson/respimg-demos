@@ -11,6 +11,7 @@
 		"grunt-contrib-jshint"    : ">=0.1.x",
 		"grunt-contrib-uglify"    : ">=0.1.x",
 		"grunt-contrib-sass"      : ">=0.1.x",
-		"grunt-contrib-imagemin"  : ">=0.1.4"
+		"grunt-contrib-imagemin"  : ">=0.1.4",
+		"grunt-contrib-csslint"   : ">=0.1.2"
 	}
 }

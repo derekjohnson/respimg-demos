@@ -6,6 +6,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('svgo-grunt');
 
 	// config
@@ -43,6 +44,17 @@ module.exports = function(grunt) {
 					'css/old-ie.css': 'sass/old-ie.scss',
 					'css/really-old-ie.css': 'sass/really-old-ie.scss'
 				}
+			}
+		},
+
+		csslint: {
+			prod: {
+				options: {
+					import: 2,
+					'empty-rules': 2
+				},
+
+				src: ['css/style.css']
 			}
 		},
 
@@ -95,7 +107,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imagemin']);
+	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imagemin','csslint']);
 
 	grunt.registerTask('img', ['imagemin','svgo']);
 };
