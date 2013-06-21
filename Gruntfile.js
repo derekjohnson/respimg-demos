@@ -5,9 +5,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('svgo-grunt');
+    grunt.loadNpmTasks('grunt-svg2png');
+    grunt.loadNpmTasks('grunt-imageoptim');
 
 	// config
 	grunt.initConfig({
@@ -24,7 +25,7 @@ module.exports = function(grunt) {
 			},
 
 			js: {
-				files: 'js/src/*.js',
+				files: 'src/js/*.js',
 				tasks: ['uglify'],
 				options: {
 					interrupt: true
@@ -40,9 +41,9 @@ module.exports = function(grunt) {
 				},
 
 				files: {
-					'css/style.css': 'sass/style.scss',
-					'css/old-ie.css': 'sass/old-ie.scss',
-					'css/really-old-ie.css': 'sass/really-old-ie.scss'
+					'dist/css/style.css': 'src/sass/style.scss',
+					'dist/css/old-ie.css': 'src/sass/old-ie.scss',
+					'dist/css/really-old-ie.css': 'src/sass/really-old-ie.scss'
 				}
 			}
 		},
@@ -67,7 +68,7 @@ module.exports = function(grunt) {
 				},
 
 				files: {
-					'js/script.min.js': ['js/src/main.js']
+					'dist/js/script.min.js': ['src/js/main.js']
 				}
 			}
 		},
@@ -76,40 +77,36 @@ module.exports = function(grunt) {
 			prod: ['Gruntfile.js']
 		},
 
-		imagemin: {
+		svgo: {
 			prod: {
-				options: {
-					optimizationLevel: 3
-				},
+				files: 'dist/img/*.svg'
+			}
+		},
 
+		svg2png: {
+			prod: {
 				files: [
 					{
-						expand: true,     // Enable dynamic expansion.
-						cwd: 'img/src/',      // Src matches are relative to this path.
-						src: ['**/*.png'], // Actual pattern(s) to match.
-						dest: 'img/',   // Destination path prefix.
-						ext: '.png',   // Dest filepaths will have this extension.
-					},
-
-					{
-						expand: true,     // Enable dynamic expansion.
-						cwd: 'img/src/',      // Src matches are relative to this path.
-						src: ['**/*.jpg'], // Actual pattern(s) to match.
-						dest: 'img/',   // Destination path prefix.
-						ext: '.jpg',   // Dest filepaths will have this extension.
+						src: ['dist/img/**/*.svg']
 					}
 				]
 			}
 		},
 
-		svgo: {
+		imageoptim: {
 			prod: {
-				files: 'img/*.svg'
+				options: {
+					quitAfter: true
+				},
+
+				files: [
+					'dist/img'
+				]
 			}
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imagemin','csslint']);
+	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imageoptim','csslint']);
 
-	grunt.registerTask('img', ['imagemin','svgo']);
+	grunt.registerTask('img', ['svgo','svg2png','imageoptim']);
 };

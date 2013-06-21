@@ -7,6 +7,8 @@
 	{
 		"grunt"                   : ">=0.4.x",
 		"svgo-grunt"              : ">=0.0.3",
+		"grunt-svg2png"           : ">=0.1.x",
+		"grunt-imageoptim"        : ">=1.x.x",
 		"grunt-contrib-watch"     : ">=0.2.x",
 		"grunt-contrib-jshint"    : ">=0.1.x",
 		"grunt-contrib-uglify"    : ">=0.1.x",
