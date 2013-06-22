@@ -7,8 +7,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('svgo-grunt');
-    grunt.loadNpmTasks('grunt-svg2png');
-    grunt.loadNpmTasks('grunt-imageoptim');
+	grunt.loadNpmTasks('grunt-svg2png');
+	grunt.loadNpmTasks('grunt-imageoptim');
+	grunt.loadNpmTasks('grunt-html-build');
 
 	// config
 	grunt.initConfig({
@@ -16,8 +17,16 @@ module.exports = function(grunt) {
 
 		// watch
 		watch: {
+			html: {
+				files: 'src/*.html',
+				tasks: ['htmlbuild'],
+				option: {
+					interrupt: true
+				}
+			},
+
 			css: {
-				files: 'sass/*.scss',
+				files: 'src/sass/*.scss',
 				tasks: ['sass'],
 				options: {
 					interrupt: true
@@ -34,6 +43,21 @@ module.exports = function(grunt) {
 		},
 
 		// tasks
+		htmlbuild: {
+			prod: {
+				src: 'src/*.html',
+
+				dest: 'dist/',
+
+				options: {
+					beautify: false,
+					sections: {
+						header: 'src/templates/header.html'
+					}
+				}
+			}
+		},
+
 		sass: {
 			prod: {
 				options: {
@@ -106,7 +130,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imageoptim','csslint']);
+	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imageoptim','csslint','htmlbuild']);
 
 	grunt.registerTask('img', ['svgo','svg2png','imageoptim']);
 };
