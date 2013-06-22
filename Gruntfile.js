@@ -99,9 +99,9 @@ module.exports = function(grunt) {
 					quitAfter: true
 				},
 
-				files: [
-					'dist/img'
-				]
+				files: {
+					src: ['dist/img']
+				}
 			}
 		}
 	});
