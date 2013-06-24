@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-svg2png');
 	grunt.loadNpmTasks('grunt-imageoptim');
 	grunt.loadNpmTasks('grunt-html-build');
+	grunt.loadNpmTasks('grunt-grunticon');
 
 	// config
 	grunt.initConfig({
@@ -127,10 +128,19 @@ module.exports = function(grunt) {
 					src: ['dist/img']
 				}
 			}
+		},
+
+		grunticon: {
+			myIcons: {
+				options: {
+					src: "src/img/icons/",
+					dest: "dist/css/icons/"
+				}
+			}
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imageoptim','csslint','htmlbuild']);
+	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imageoptim','csslint','htmlbuild','grunticon']);
 
-	grunt.registerTask('img', ['svgo','svg2png','imageoptim']);
+	grunt.registerTask('img', ['svgo','grunticon','svg2png','imageoptim']);
 };
