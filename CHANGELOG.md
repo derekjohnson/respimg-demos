@@ -1,3 +1,9 @@
+### v0.1.2 2013-06-24
+
+* add grunticon
+* use svgmin instead of (the now depracated) svgo
+* reorganise assets folder
+
 ### v0.1.1 2013-06-22
 
 * fix bug that prevented imageoptim running
