@@ -11,6 +11,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-imageoptim');
 	grunt.loadNpmTasks('grunt-html-build');
 	grunt.loadNpmTasks('grunt-grunticon');
+	grunt.loadNpmTasks('grunt-svgmin');
 
 	// config
 	grunt.initConfig({
@@ -102,9 +103,31 @@ module.exports = function(grunt) {
 			prod: ['Gruntfile.js']
 		},
 
-		svgo: {
+		svgmin: {
 			prod: {
-				files: 'dist/img/*.svg'
+				options: {
+					plugins: [
+						{
+							removeViewBox: false
+						}
+					]
+				},
+
+				files: [
+					{
+						expand: true,
+						cwd: 'src/assets/img',
+						src: '{,*/}*.svg',
+						dest: 'dist/images/'
+					},
+
+					{
+						expand: true,
+						cwd: 'src/assets/icons',
+						src: '{,*/}*.svg',
+						dest: 'src/assets/icons'
+					}
+				]
 			}
 		},
 
@@ -112,7 +135,7 @@ module.exports = function(grunt) {
 			prod: {
 				files: [
 					{
-						src: ['dist/img/**/*.svg']
+						src: ['dist/images/**/*.svg']
 					}
 				]
 			}
@@ -121,26 +144,27 @@ module.exports = function(grunt) {
 		imageoptim: {
 			prod: {
 				options: {
+					imageAlpha: true,
 					quitAfter: true
 				},
 
 				files: {
-					src: ['dist/img']
+					src: ['dist/images']
 				}
 			}
 		},
 
 		grunticon: {
-			myIcons: {
+			prod: {
 				options: {
-					src: "src/img/icons/",
-					dest: "dist/css/icons/"
+					src: 'src/assets/icons/',
+					dest: 'dist/css/icons/'
 				}
 			}
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgo','jshint','uglify','imageoptim','csslint','htmlbuild','grunticon']);
+	grunt.registerTask('default', ['sass','svgmin','jshint','uglify','imageoptim','csslint','htmlbuild','grunticon']);
 
-	grunt.registerTask('img', ['svgo','grunticon','svg2png','imageoptim']);
+	grunt.registerTask('img', ['svgmin','grunticon','svg2png','imageoptim']);
 };
