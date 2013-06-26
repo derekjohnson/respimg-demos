@@ -6,7 +6,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('svgo-grunt');
 	grunt.loadNpmTasks('grunt-svg2png');
 	grunt.loadNpmTasks('grunt-imageoptim');
 	grunt.loadNpmTasks('grunt-html-build');
