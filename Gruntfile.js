@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 		// watch
 		watch: {
 			html: {
-				files: 'src/*.html',
+				files: 'src/**/*.html',
 				tasks: ['htmlbuild'],
 				option: {
 					interrupt: true
