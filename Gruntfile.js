@@ -166,5 +166,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['sass','svgmin','jshint','uglify','imageoptim','csslint','htmlbuild','grunticon']);
 
+	grunt.registerTask('setup', ['sass','svgmin','jshint','uglify','htmlbuild','grunticon']);
+
 	grunt.registerTask('img', ['svgmin','grunticon','svg2png','imageoptim']);
 };
