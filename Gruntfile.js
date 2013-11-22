@@ -184,5 +184,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('img', ['svgmin','grunticon','svg2png','imageoptim']);
 
-	grunt.registerTask('server', ['connect']);
+	grunt.registerTask('server', ['connect:server']);
 };
