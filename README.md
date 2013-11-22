@@ -31,3 +31,7 @@ A modified version of [HTML5 boilerplate](https://github.com/h5bp/html5-boilerpl
 #### Server
 
 * Uses connect to serve files in ./dist/ to any device on the same network
+
+### Todo
+
+Get livereload working on connected devices. Currently using the browser plugin and it only updates other devices connected through Grunt Connect sporadically.
