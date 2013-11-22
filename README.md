@@ -27,3 +27,7 @@ A modified version of [HTML5 boilerplate](https://github.com/h5bp/html5-boilerpl
 
 * SVG's in /src/assets/icons optimised using svgmin
 * grunticon works its magic on them, saving all relevant files to dist/css
+
+#### Server
+
+* Uses connect to serve files in ./dist/ to any device on the same network
