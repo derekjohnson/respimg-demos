@@ -11,6 +11,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-html-build');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-svgmin');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// config
 	grunt.initConfig({
@@ -162,6 +163,18 @@ module.exports = function(grunt) {
 					dest: 'dist/css/icons/'
 				}
 			}
+		},
+
+		// Connect plugin for server and synchronisation between browsers/devices
+		connect: {
+			server: {
+				options: {
+					port: 9001,
+					hostname: '0.0.0.0',
+					base: 'dist',
+					keepalive: true
+				}
+			}
 		}
 	});
 
@@ -170,4 +183,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('setup', ['sass','svgmin','jshint','uglify','htmlbuild','grunticon']);
 
 	grunt.registerTask('img', ['svgmin','grunticon','svg2png','imageoptim']);
+
+	grunt.registerTask('server', ['connect']);
 };
