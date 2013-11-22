@@ -63,7 +63,8 @@ module.exports = function(grunt) {
 		sass: {
 			prod: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					noCache: true
 				},
 
 				files: {
@@ -116,7 +117,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: 'src/assets/img',
+						cwd: 'src/assets/images',
 						src: '{,*/}*.svg',
 						dest: 'dist/images/'
 					},
