@@ -1,3 +1,10 @@
+### v0.1.3 2013-11-22
+
+* add .gitignore to /dist/assets/images/ and /dist/assets/icons/ to prevent error when grunt is first run
+* change name of templates/ to parts/ and index.html to template.html
+* add `noCache: true` to Sass task options to prevent compile error
+* New plugin! Grunt Connect to launch a server and give me local access on other devices
+
 ### v0.1.2 2013-06-24
 
 * add grunticon
