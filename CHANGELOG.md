@@ -1,3 +1,11 @@
+### v0.1.4 2013-12-17
+
+* add print styles
+* add X-UA-Compatible meta
+* update GA script
+* add style to align media elements
+* copy paste the latest @h5bp .htaccess
+
 ### v0.1.3 2013-11-22
 
 * add .gitignore to /dist/assets/images/ and /dist/assets/icons/ to prevent error when grunt is first run
