@@ -531,6 +531,14 @@ object {
 	height: auto;
 }
 
+audio,
+canvas,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
 button,
 input,
 select,
