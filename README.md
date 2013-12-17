@@ -1,4 +1,4 @@
-## v 0.1.3 (2013-11-22)
+## v 0.1.4 (2014-12-17)
 
 A modified version of [HTML5 boilerplate](https://github.com/h5bp/html5-boilerplate) with [Sass](http://sass-lang.com/) and [Grunt](http://gruntjs.com/).
 
