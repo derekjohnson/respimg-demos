@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+	require('time-grunt')(grunt);
 
 	// load tasks
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -65,7 +66,7 @@ module.exports = function(grunt) {
 			prod: {
 				options: {
 					style: 'compressed',
-					noCache: true
+					//noCache: true
 				},
 
 				files: {
@@ -158,10 +159,20 @@ module.exports = function(grunt) {
 
 		grunticon: {
 			prod: {
-				options: {
-					src: 'src/assets/icons/',
+				files: [{
+					expand: true,
+					cwd: 'src/assets/icons/',
+					src: ['*.svg', '*.png'],
 					dest: 'dist/css/icons/'
-				}
+				}]
+
+				/*options: {
+					customselectors: {
+						"*": [".icon-$1:before"]
+						// (this is going to be very useful)
+					}
+					
+				}*/
 			}
 		},
 
