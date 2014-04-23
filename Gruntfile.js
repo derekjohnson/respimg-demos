@@ -1,18 +1,6 @@
 module.exports = function(grunt) {
 	require('time-grunt')(grunt);
-
-	// load tasks
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-svg2png');
-	grunt.loadNpmTasks('grunt-imageoptim');
-	grunt.loadNpmTasks('grunt-html-build');
-	grunt.loadNpmTasks('grunt-grunticon');
-	grunt.loadNpmTasks('grunt-svgmin');
-	grunt.loadNpmTasks('grunt-contrib-connect');
+	require('jit-grunt')(grunt, {htmlbuild: 'grunt-html-build'});
 
 	// config
 	grunt.initConfig({
@@ -189,9 +177,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['sass','svgmin','jshint','uglify','imageoptim','csslint','htmlbuild','grunticon']);
-
-	grunt.registerTask('setup', ['sass','svgmin','jshint','uglify','htmlbuild','grunticon']);
+	grunt.registerTask('default', ['htmlbuild','sass','uglify','csslint','jshint']);
 
 	grunt.registerTask('img', ['svgmin','grunticon','svg2png','imageoptim']);
 
