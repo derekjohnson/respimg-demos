@@ -1,4 +1,6 @@
-## v 0.1.4 (2014-12-17)
+# Readme
+
+## v 0.2.0 (2014-04-23)
 
 A modified version of [HTML5 boilerplate](https://github.com/h5bp/html5-boilerplate) with [Sass](http://sass-lang.com/) and [Grunt](http://gruntjs.com/).
 
@@ -32,6 +34,6 @@ A modified version of [HTML5 boilerplate](https://github.com/h5bp/html5-boilerpl
 
 * Uses connect to serve files in ./dist/ to any device on the same network
 
-### Todo
+#### Grunt
 
-Get livereload working on connected devices. Currently using the browser plugin and it only updates other devices connected through Grunt Connect sporadically.
+* Tasks loaded using jit-grunt for approximately 1.5s (75%) time saving on `grunt`. Much more on watch tasks.
