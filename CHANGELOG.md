@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.1 2014-05-12
+
+* add lang attribute
+
 ## v0.2.0 2014-04-23
 
 * update grunticon to >=1.2.0
