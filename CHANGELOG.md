@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2 2014-05-15
+
+* update HTML5 shiv (for picture element support)
+
 ## v0.2.1 2014-05-12
 
 * add lang attribute
