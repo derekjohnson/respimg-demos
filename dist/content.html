@@ -26,8 +26,17 @@
 		<header role="banner">
 		</header>
 
-		<main role="main">
-		</main>
+		<div class="l-wrap">
+			<main class="blog" role="main">
+				<img class="blog__img" alt="" srcset="images/small.png 320w, images/medium.png 640w, images/large.png 1024w" sizes="100vw">
+
+				<p>You may notice that while this markup comes from the “picture” spec, there isn’t a &lt;picture&gt; element in sight. The srcset and sizes attributes will be implemented on &lt;img&gt; too, and for simple, not-art-directed, non-type-switched cases like this, you can and should use a single instance of our old friend, &lt;img&gt; to mark up your responsive image.</p>
+			</main><!--
+
+			--><aside class="sidebar">
+				<p>Sidebar</p>
+			</aside>
+		</div>
 
 			<nav role="navigation">
 				<ul>

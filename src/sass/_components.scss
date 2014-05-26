@@ -1,12 +1,43 @@
 /*! Components */
 
 /* ==========================================================================
-   Typography
+   Basic banner
    ========================================================================== */
+.banner {
+	width: 100%;
+}
 
-
-/* Headings
+/* ==========================================================================
+   Blog
    ========================================================================== */
+.blog {
 
-/* Body copy
+	&__img {
+		width: 100%;
+	}
+
+	@include respond-min(50em) {
+		display: inline-block;
+		vertical-align: top;
+		width: 65%;
+		margin-right: 5%;
+	}
+}
+
+.sidebar {
+	@include respond-min(50em) {
+		display: inline-block;
+		vertical-align: top;
+		width: 30%;
+	}
+}
+
+/* ==========================================================================
+   General layout
    ========================================================================== */
+.l-wrap {
+	width: 95%;
+	max-width: 75em;
+	margin-left: auto;
+	margin-right: auto;
+}

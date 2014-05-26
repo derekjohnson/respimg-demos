@@ -44,7 +44,8 @@ module.exports = function(grunt) {
 					beautify: false,
 					sections: {
 						header: 'src/parts/header.part.html',
-						footer: 'src/parts/footer.part.html'
+						footer: 'src/parts/footer.part.html',
+						nav: 'src/parts/nav.part.html'
 					}
 				}
 			}
