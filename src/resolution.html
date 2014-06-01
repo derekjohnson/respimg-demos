@@ -4,7 +4,7 @@
 		<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Using different pixel sizes with srcset</title>
+		<title>Using different resolutions with srcset</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<!--[if gt IE 8]><!-->
@@ -23,23 +23,18 @@
 	</head>
 
 	<body>
-		<header role="banner">
-		</header>
+		<!-- build:section header -->
+		<!-- /build -->
 
 		<main role="main">
-			<img class="banner" alt="" srcset="images/small.png 320w, images/medium.png 640w, images/large.png 1024w, images/very-large.png 2000w" sizes="100vw">
+			<img srcset="images/low-res.jpg 1x, images/hi-res.jpg 2x" width="320" height="240" alt="In Our Image by Joseph Hiller">
 		</main>
 
-			<nav role="navigation">
-				<ul>
-					<li><a href="resolution.html">Resolution</a></li>
-					<li><a href="banner.html">Simple banner</a></li>
-					<li><a href="content.html">Content image</a></li>
-				</ul>
-			</nav>
+		<!-- build:section nav -->
+		<!-- /build -->
 
-		<footer role="contentinfo">
-		</footer>
+		<!-- build:section footer -->
+		<!-- /build -->
 
 		<script src="js/script.min.js"></script>
 	</body>
