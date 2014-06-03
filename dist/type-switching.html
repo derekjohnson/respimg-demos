@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+	<head>
+		<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Type switching</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!--[if gt IE 8]><!-->
+		<link rel="stylesheet" href="css/style.css">
+		<!--<![endif]-->
+		<!--[if (IE 7)|(IE 8)]>
+		<link rel="stylesheet" href="css/old-ie.css">
+		<![endif]-->
+		<!--[if lt IE 7]>
+		<link rel="stylesheet" href="css/really-old-ie.css">
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv-printshiv.js"></script>
+		<![endif]-->
+		<script src="js/picturefill.min.js" async></script>
+	</head>
+
+	<body>
+		<header role="banner">
+		</header>
+
+		<main role="main">
+			<picture>
+				<source srcset="images/small.webp 320w, images/medium.webp 640w, images/large.webp 1024w, images/very-large.webp 2000w" sizes="100vw" type="image/webp">
+				<source srcset="images/small.png 320w, images/medium.png 640w, images/large.png 1024w, images/very-large.png 2000w" sizes="100vw" type="image/png">
+				<img class="banner" src="images/small.png" alt="">
+			</picture>
+		</main>
+
+			<nav role="navigation">
+				<ul>
+					<li><a href="resolution.html">Resolution</a></li>
+					<li><a href="banner.html">Simple banner</a></li>
+					<li><a href="content.html">Content image</a></li>
+				</ul>
+			</nav>
+
+		<footer role="contentinfo">
+		</footer>
+
+		<script src="js/script.min.js"></script>
+	</body>
+</html>
