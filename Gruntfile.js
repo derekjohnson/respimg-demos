@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
 	require('time-grunt')(grunt);
-	require('jit-grunt')(grunt, {htmlbuild: 'grunt-html-build'});
+	require('jit-grunt')(grunt, {
+		htmlbuild: 'grunt-html-build',
+		webp: 'grunt-webp'
+	});
 
 	// config
 	grunt.initConfig({
@@ -162,6 +165,13 @@ module.exports = function(grunt) {
 					}
 					
 				}*/
+			}
+		},
+
+		webp: {
+			files: {
+				src: 'dist/images/chopin.jpg',
+				dest: 'dist/images/'
 			}
 		},
 
